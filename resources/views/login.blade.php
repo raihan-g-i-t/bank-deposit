@@ -110,6 +110,7 @@
     <div class="login-container">
         <h1>Login</h1>
         <form action="{{route("user.login")}}" method="POST">
+            @csrf
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" placeholder="Enter your Email" required>
@@ -121,7 +122,7 @@
             <button type="submit">Log In</button>
         </form>
         <div class="footer">
-            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+            <p>Don't have an account? <a href="{{route("user.signup")}}">Sign up</a></p>
         </div>
     </div>
 </body>

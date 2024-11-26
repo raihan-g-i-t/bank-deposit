@@ -163,7 +163,7 @@ body, html {
         <div class="hero-content">
             <h1>Welcome to PlatformName</h1>
             <p>Discover the ultimate platform for your needs. Experience cutting-edge features and seamless integration.</p>
-            <a href="#signup" class="cta-btn">Get Started</a>
+            <a href="{{route("user.signup")}}" class="cta-btn">Get Started</a>
         </div>
     </header>
     <section id="details" class="details-section">

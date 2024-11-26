@@ -34,7 +34,7 @@ class mainController extends Controller
 
     }
 
-    // public function user_login(Request $request){
-    //     return view("user.profile");
-    // }
+    public function user_login(Request $request){
+        return view("user.profile");
+    }
 }
