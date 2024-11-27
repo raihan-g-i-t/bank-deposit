@@ -22,7 +22,7 @@ class authServicea
         ]);
 
         if(Auth::attempt($credentials)){
-            return redirect()->route('user.profile');
+            return $next($request);
         }else{
             return back();
         }

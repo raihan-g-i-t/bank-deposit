@@ -23,7 +23,9 @@ use App\Http\Middleware\authServicea;
 Route::get("/", [mainController::class,"index"])->name("index");
 
 Route::get("/login",[mainController::class,"login"])->name("login");
-Route::post("/login",[mainController::class,"user_login"])->name("user.login")->middleware(authServicea::class);
+Route::post("/login",[mainController::class,"user_login"])
+    ->name("user.login")
+    ->middleware(authServicea::class);
 
 // Route::middleware(['authServicea'])->group(function () {
 
