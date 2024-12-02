@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,7 +25,7 @@ class mainController extends Controller
         DB::table("users")->insert([
 
             "email"=> $request->email,
-            "password"=> $request->password,
+            "password"=> bcrypt($request->password),
             "name" => $request->name,
             "role" => 1
 
@@ -36,5 +37,20 @@ class mainController extends Controller
 
     public function user_login(Request $request){
         return view("user.profile");
+    }
+
+    public function admin_dashboard(){
+
+        return view('admin.dashboard');
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        return view("index");
+    }
+
+    public function admin_settings(){
+        return view('admin.settings');
     }
 }

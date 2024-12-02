@@ -3,6 +3,7 @@
 use App\Http\Controllers\mainController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\authServicea;
+use App\Http\Middleware\loginCheck;
 
 
 /*
@@ -32,5 +33,17 @@ Route::post("/login",[mainController::class,"user_login"])
 //     Route::post("/login",[mainController::class,"user_login"])->name("user.login");
 // });
 
+// Route::middleware(['loginCheck'])->group(function(){
+
+//     Route::get('/admin/dashboard', [mainController::class, "admin_dashboard"])->name("admn.dashboard");
+// });
+
+Route::get('/admin/dashboard', [mainController::class, "admin_dashboard"])
+    ->name("admin.dashboard");
+
+
 Route::get("/user/signup",[mainController::class,"user_signup"])->name("user.signup");
 Route::post("/user/signup",[mainController::class,"user_registration"])->name("user.signup");
+
+Route::get('/logout', [mainController::class, "logout"])->name('logout');
+Route::get('/admin/settings',[mainController::class, "admin_settings"])->name('admin.settings');

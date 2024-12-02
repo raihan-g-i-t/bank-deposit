@@ -22,7 +22,13 @@ class authServicea
         ]);
 
         if(Auth::attempt($credentials)){
-            return $next($request);
+            
+            if(Auth::user()->role == 1){
+                return $next($request);
+            }else{
+                return redirect('/admin/dashboard');
+            }
+            
         }else{
             return back();
         }
