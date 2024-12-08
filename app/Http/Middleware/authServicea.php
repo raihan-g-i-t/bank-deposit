@@ -30,7 +30,10 @@ class authServicea
             }
             
         }else{
-            return back();
+            //$data = "Please login first";
+            //$data = compact("data2");
+            // return back()->with($data);
+            return redirect()->route('login')->with('data', 'Incorrect Email or Password');
         }
 
         
