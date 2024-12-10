@@ -10,7 +10,7 @@
     <div class="login-container">
         <h1>Login</h1>
         <form action="{{route("user.login")}}" method="POST">
-            <label class="text-danger">{{session('data') ?? ""}}</label>
+            <label class="message">{{session('data') ?? ""}}</label>
             @csrf
             <div class="input-group">
                 <label for="email">Email</label>
