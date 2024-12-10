@@ -6,7 +6,9 @@ Welcome, Admin
 
 @section('content')
 <!-- Statistics Section -->
-<div class="stats">
+
+@for ($i=1; $i<6; $i++)
+  <div class="stats">
       <div class="card">
         <h3>Users</h3>
         <p>1,200</p>
@@ -19,7 +21,8 @@ Welcome, Admin
         <h3>Visitors</h3>
         <p>3,500</p>
       </div>
-    </div>
+  </div>
+@endfor
 
 <!-- Table Section -->
 <div class="table-section">

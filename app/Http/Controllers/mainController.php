@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Image;
 
 class mainController extends Controller
 {
@@ -36,7 +37,9 @@ class mainController extends Controller
     }
 
     public function user_login(Request $request){
-        return view("user.profile");
+
+        $images = Image::all();
+        return view('user.profile', compact('images'));
     }
 
     public function admin_dashboard(){

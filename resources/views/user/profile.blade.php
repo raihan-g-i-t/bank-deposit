@@ -98,7 +98,18 @@
 </head>
 <body>
     <div class="profile-container">
-        <div class="profile-picture" style="background-image: url('https://via.placeholder.com/120');"></div>
+        <!-- <div class="profile-picture" style="background-image: url('https://via.placeholder.com/120');"></div> -->
+        @foreach ($images as $image)
+        <img src="{{ asset('storage/' . $image->image_path) }}" alt="Image" style="width:200px;">
+        @endforeach
+        
+        <form action="{{ route('image.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <label for="image">Choose Image:</label>
+            <input type="file" name="image" id="image" required>
+            <button type="submit">Upload</button>
+        </form>
+
         <h1 class="profile-name">John Doe</h1>
         <p class="profile-bio">Web Developer | Tech Enthusiast | Lifelong Learner</p>
         <div class="profile-stats">

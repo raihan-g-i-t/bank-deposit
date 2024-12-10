@@ -4,7 +4,7 @@ use App\Http\Controllers\mainController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\authServicea;
 use App\Http\Middleware\LoginCheck;
-
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +48,8 @@ Route::get("/user/signup",[mainController::class,"user_signup"])->name("user.sig
 Route::post("/user/signup",[mainController::class,"user_registration"])->name("user.signup");
 
 Route::get('/logout', [mainController::class, "logout"])->name('logout');
+
+Route::get('/upload', [ImageController::class, 'create'])->name('image.create');
+Route::post('/upload', [ImageController::class, 'store'])->name('image.store');
+Route::get('/images', [ImageController::class, 'index'])->name('image.index');
+
