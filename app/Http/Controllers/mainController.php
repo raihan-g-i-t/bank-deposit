@@ -32,7 +32,7 @@ class mainController extends Controller
 
         ]);
 
-        return route("user.signup",["Successful"]);
+        return redirect()->back()->with('success', 'Registration Successful');
 
     }
 
