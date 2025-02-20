@@ -7,7 +7,7 @@ Welcome, Admin
 @section('content')
 <!-- Statistics Section -->
 
-@for ($i=1; $i<6; $i++)
+@for ($i=1; $i<10; $i++)
   <div class="stats">
       <div class="card">
         <h3>Users</h3>

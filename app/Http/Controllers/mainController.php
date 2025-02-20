@@ -50,7 +50,7 @@ class mainController extends Controller
     public function logout(){
         Auth::logout();
 
-        return view("index");
+        return redirect("/")->with('success', 'Logout Successfull');
     }
 
     public function admin_settings(){

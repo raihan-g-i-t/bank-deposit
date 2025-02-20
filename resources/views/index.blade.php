@@ -44,5 +44,10 @@
             </div>
         </div>
     </section>
+
+    @if(session('success'))
+        @include('user.modal');
+    @endif
+
 </body>
 </html>
